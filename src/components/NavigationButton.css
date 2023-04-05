@@ -1,0 +1,21 @@
+.navigationButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 30px;
+
+    margin: 10px 0;
+    padding: 3px;
+    
+}
+
+.navigationButton:hover {
+    background-color: #A3AD98;
+}
+
+.navigationButton img {
+    width: 24px;
+    height: 24px;
+}
