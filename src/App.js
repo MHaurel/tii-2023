@@ -4,6 +4,7 @@ import NavigationRail from './components/NavigationRail';
 import Home from './pages/Home';
 import Activities from './pages/Activities';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HelpIcon from './components/HelpIcon';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <HelpIcon/>
     </div>
   );
 }
