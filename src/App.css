@@ -1,4 +1,9 @@
-.App {
+.App .page {
+  margin-left: 10rem;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +40,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

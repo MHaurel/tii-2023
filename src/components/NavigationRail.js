@@ -7,11 +7,14 @@ import ThemeIcon from "./ThemeIcon";
 import "./NavigationRail.css"
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NavigationRail() {
     const [theme, setTheme] = useState("light");
     const [homeActive, setHomeActive] = useState(true);
     const [chartActive, setChartActive] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleClick = () => {
         if (theme === "light") {
@@ -22,15 +25,19 @@ function NavigationRail() {
     }
 
     const handleChangeRouteHome = () => {
-        if (!homeActive) 
+        if (!homeActive) {
             setHomeActive(true)
-            setChartActive(false)
+            setChartActive(false);
+            navigate("/");
+        }
     }
 
     const handleChangeRouteChart = () => {
-        if (!chartActive)
+        if (!chartActive) {
             setChartActive(true)
             setHomeActive(false)
+            navigate("/activities");
+        }
     }
 
     return (
