@@ -33,10 +33,11 @@ function HelpIcon(){
                     <Button onClick={handleClick}>Ok</Button>
                 </DialogActions>
             </Dialog>
-
-            <Fab onClick={handleClick} aria-label="help" className="helpIcon">
-                <img style={{width: 24}} src={process.env.PUBLIC_URL + "images/icons/help.png"} alt="question mark icon"/>
-            </Fab>
+            <div className="helpIcon">
+                <Fab onClick={handleClick} aria-label="help">
+                    <img style={{width: 24}} src={process.env.PUBLIC_URL + "images/icons/help.png"} alt="question mark icon"/>
+                </Fab>
+            </div>
 
         </div>
     )
