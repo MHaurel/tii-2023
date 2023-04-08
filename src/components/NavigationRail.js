@@ -9,20 +9,11 @@ import "./NavigationRail.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function NavigationRail() {
-    const [theme, setTheme] = useState("light");
+function NavigationRail({handleChangeTheme, theme}) {
     const [homeActive, setHomeActive] = useState(true);
     const [chartActive, setChartActive] = useState(false);
 
     const navigate = useNavigate();
-
-    const handleClick = () => {
-        if (theme === "light") {
-            setTheme("dark");
-        } else {
-            setTheme("light");
-        }
-    }
 
     const handleChangeRouteHome = () => {
         if (!homeActive) {
@@ -49,7 +40,7 @@ function NavigationRail() {
                     <NavigationButton label="Activities" icon="chart" active={chartActive} onClick={handleChangeRouteChart}/>
                     <NavigationButton label="Logout" icon="logout"/>
                 </div>
-                <Fab onClick={handleClick}>
+                <Fab onClick={handleChangeTheme}>
                     <ThemeIcon theme={theme}/>
                 </Fab>
             </Drawer>

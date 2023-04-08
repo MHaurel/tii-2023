@@ -1,6 +1,6 @@
 function ThemeIcon({theme}) {
 
-    let imgFileName = theme === "dark" ? "light_mode.png" : "dark_mode.png";
+    let imgFileName = theme.palette.mode === "dark" ? "light_mode.png" : "dark_mode.png";
     let imgPath = process.env.PUBLIC_URL + "/images/icons/" + imgFileName;
     
     return (
