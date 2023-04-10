@@ -1,0 +1,19 @@
+.activity {
+    width: 35vw;
+    margin: 1rem 0;
+}
+
+.activity:hover {
+    background-color: antiquewhite;
+    /* cursor: pointer; */
+}
+
+.activityWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.activityWrapper > * {
+    font-weight: 400;
+}
