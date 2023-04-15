@@ -8,13 +8,8 @@
 }
 
 .data-vis > div {
-    top: 0;
-    width: 70%;
-    height: 70%;
-}
-
-.data-vis svg > g:nth-child(1) {
-    top: 0;
+    margin-top: 30vh;
+    margin-left: 8vw;
 }
 
 .subtitle {

@@ -6,7 +6,7 @@ import Activities from './pages/Activities';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 const darkTheme = createTheme({
   palette: {
