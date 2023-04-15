@@ -1,3 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.data-vis {
+    width: 100%;
+}
+
+.data-vis > div {
+    top: 0;
+    width: 70%;
+    height: 70%;
+}
+
+.data-vis svg > g:nth-child(1) {
+    top: 0;
+}
+
 .subtitle {
     font-weight: normal;
 }
