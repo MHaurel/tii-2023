@@ -1,6 +1,7 @@
 import "./Activities.css";
 
 import Activity from "../models/Activity";
+import CustomDate from "../models/CustomDate";
 
 import ActivityCard from "../components/ActivityCard";
 import ActivitiesLineChart from "../components/ActivitiesLineChart";
@@ -25,7 +26,7 @@ function Activities() {
         55,
         0,
         203,
-        "2022-01-02T17:45:21.000Z"
+        "2022-02-02T17:45:21.000Z"
     );
     
     let activities = [
@@ -34,7 +35,7 @@ function Activities() {
 
     let activitiesData = []
     activities.forEach((act, i) => {
-        activitiesData.push({x: i, y: act.consumedCalories})
+        activitiesData.push({date: new CustomDate(act.date).getDate(), consumedCalories: act.consumedCalories})
     });
 
     return (
