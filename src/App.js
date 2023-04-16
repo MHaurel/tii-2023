@@ -42,6 +42,7 @@ function App() {
             </Routes>
           </div>
         </BrowserRouter>
+        {/* Insert footer here */}
         <HelpIcon/>
       </ThemeProvider>
     </div>
