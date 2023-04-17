@@ -1,5 +1,5 @@
 .navigationRail > div {
-    width: 8%;
+    width: 8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
