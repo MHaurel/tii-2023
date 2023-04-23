@@ -3,6 +3,7 @@ import './App.css';
 import NavigationRail from './components/NavigationRail';
 import Home from './pages/Home';
 import Activities from './pages/Activities';
+import Profil from "./pages/Profil";
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
@@ -39,6 +40,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='activities' element={<Activities/>}/>
+              <Route path='profil' element={<Profil/>}/>
             </Routes>
           </div>
         </BrowserRouter>

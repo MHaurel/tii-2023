@@ -1,8 +1,8 @@
-import Avatar from "@mui/material/Avatar";
 import Drawer from "@mui/material/Drawer";
 import NavigationButton from "./NavigationButton";
 import Fab from "@mui/material/Fab";
 import ThemeIcon from "./ThemeIcon";
+import AvatarButton from "./AvatarButton";
 
 import "./NavigationRail.css"
 
@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 function NavigationRail({handleChangeTheme, theme}) {
     const [homeActive, setHomeActive] = useState(true);
     const [chartActive, setChartActive] = useState(false);
+    const selectedFile = localStorage.getItem("avatarImage");
 
     const navigate = useNavigate();
 
@@ -31,10 +32,16 @@ function NavigationRail({handleChangeTheme, theme}) {
         }
     }
 
+    const handleChangeRouteProfil = () => {
+        setHomeActive(false)
+        setChartActive(false);
+        navigate("/profil");
+    }
+
     return (
         <div>
             <Drawer className="navigationRail" variant="permanent" anchor="left" elevation={0} open={true}>
-                <Avatar sx={{width: 48, height: 48}} src={process.env.PUBLIC_URL + "/images/avatar/28.png"}/>
+                <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} />
                 <div className="navigation-buttons">
                     <NavigationButton label="Home" icon="home" active={homeActive} onClick={handleChangeRouteHome}/>
                     <NavigationButton label="Activities" icon="chart" active={chartActive} onClick={handleChangeRouteChart}/>

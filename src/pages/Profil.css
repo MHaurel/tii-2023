@@ -1,0 +1,38 @@
+.profil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% de la hauteur de la vue */
+}
+
+.infos-container {
+    margin-right: 20%;
+    width: 30%;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.infos {
+    text-align: left;
+    font-size: x-large;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.5);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
