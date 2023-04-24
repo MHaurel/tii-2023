@@ -33,7 +33,7 @@ function Home() {
 
     let activitiesData = []
     activities.forEach((act, i) => {
-        activitiesData.push({x: i, y: act.consumedCalories})
+        activitiesData.push({date: i, consumedCalories: act.consumedCalories})
     });
 
     return (

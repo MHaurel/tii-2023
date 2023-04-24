@@ -8,7 +8,7 @@ function ActivitiesLineChart({data}) {
             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
             <Tooltip/>
             <Legend/>
-            <Line type="monotone" dataKey="consumedCalories" stroke="#8884d8" />
+            <Line type="monotone" dataKey="consumedCalories" stroke="#7196CE" />
         </LineChart>
     )
 }

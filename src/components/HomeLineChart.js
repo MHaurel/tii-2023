@@ -1,16 +1,16 @@
-/*import css*/
-import { LineChart, XAxis, YAxis, CartesianGrid, Line } from "recharts";
+import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, Legend } from "recharts";
 
- 
 
 function HomeLineChart({data}) {
     return(
 
         <LineChart width={1000} height={600} data={data}>
-            <XAxis dataKey="x"/>
+            <XAxis dataKey="date"/>
             <YAxis/>
+            <Tooltip/>
+            <Legend/>
             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-            <Line type="monotone" dataKey="y" stroke="#7196CE" />
+            <Line type="monotone" dataKey="consumedCalories" stroke="#7196CE" />
         </LineChart>
     )
 }
