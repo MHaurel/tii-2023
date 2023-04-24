@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
 import { ThemeProvider, createTheme } from '@mui/material';
+import Footer from './components/Footer';
 
 const darkTheme = createTheme({
   palette: {
@@ -45,6 +46,7 @@ function App() {
           </div>
         </BrowserRouter>
         {/* Insert footer here */}
+        <Footer/>
         <HelpIcon/>
       </ThemeProvider>
     </div>

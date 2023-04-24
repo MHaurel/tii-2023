@@ -4,6 +4,7 @@ import { Card, CardContent } from "@mui/material";
 import HomeLineChart from "../components/HomeLineChart";
 import Activity from "../models/Activity";
 
+
 function Home() {
 
     // TO TEST

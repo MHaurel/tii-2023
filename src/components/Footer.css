@@ -1,0 +1,48 @@
+.footer {
+    margin-left: 8rem;
+    
+}
+
+.footerDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #444444;
+    padding: 20px 0px;
+}
+
+.footerDiv p {
+    color: #F0F0F0;
+}
+
+.websiteLogo{
+    width: 128px;
+}
+
+.socialMedia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandsLogo{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    width: 32px;
+    margin: 5px;
+}
+
+.siteMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.siteMap a {
+    margin: 5px 0;
+    color: #F0F0F0;
+}
