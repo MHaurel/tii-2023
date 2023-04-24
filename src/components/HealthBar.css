@@ -1,0 +1,10 @@
+.container {
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.bar {
+    /* background-color: red; */
+    height: 1rem;
+    border-radius: 4px;
+}
