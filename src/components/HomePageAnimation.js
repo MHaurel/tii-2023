@@ -3,7 +3,7 @@ import HealthBar from './HealthBar';
 
 function HomePageAnimation() {
 
-    let fillPercentage = 100; // Will be dynamically obtained
+    let fillPercentage = 10; // Will be dynamically obtained
 
     let supportText = "You're doing well ! Keep up to reach your objective !"
     if (fillPercentage < 75 && fillPercentage >= 50) {
@@ -16,7 +16,6 @@ function HomePageAnimation() {
 
     return(
         <div className="divAnimation">
-            {/* Illustration on the LEFT and health bar + recommendation text on the RIGHT */}
             <img src={process.env.PUBLIC_URL + "/images/weightIllustration1.png"} className='illustration'/>
             <div className='healthBar'>
                 <HealthBar fillPercentage={fillPercentage}/>

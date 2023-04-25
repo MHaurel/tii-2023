@@ -1,6 +1,6 @@
 import HomePageAnimation from "../components/HomePageAnimation";
 import "./Home.css";
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Paper } from "@mui/material";
 import HomeLineChart from "../components/HomeLineChart";
 import Activity from "../models/Activity";
 
@@ -40,7 +40,9 @@ function Home() {
     return (
         <div>
             <div className="animation">
-                <HomePageAnimation/>
+                <Paper elevation={3} sx={{padding: 2}}>
+                    <HomePageAnimation/>
+                </Paper>
             </div>
             
             <div className="welcome"> 
@@ -50,9 +52,8 @@ function Home() {
                 <div className="stats">
                 
                     <div >
-                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined">
+                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined" color="primary">
                             <CardContent className="statCard">
-
                                 <span>436</span>
                                 <p>kcal lost this week</p>
                             </CardContent>

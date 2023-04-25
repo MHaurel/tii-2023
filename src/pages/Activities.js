@@ -3,13 +3,9 @@ import "./Activities.css";
 import Activity from "../models/Activity";
 import CustomDate from "../models/CustomDate";
 import ActivityIcon from "../components/ActivityIcon";
-
-import ActivityCard from "../components/ActivityCard";
 import ActivitiesLineChart from "../components/ActivitiesLineChart";
 import SegmentedButtonsFilterDate from "../components/SegmentedButtonsFilterDate";
 import { List, Avatar, ListItem, ListItemAvatar, ListItemText, Divider } from "@mui/material";
-import HelpIcon from "../components/HelpIcon";
-import { AccessAlarm } from "@mui/icons-material";
 
 function Activities() {
 
@@ -46,16 +42,10 @@ function Activities() {
     return (
         <div className="wrapper">
             <div>
-                <h1>Vos dernières activités physiques</h1>
-                <h3 className="subtitle">Retrouvez les dernières activités que vous avez effectué 🏃🏼‍♀️</h3>
+                <h1>Your last physical activities</h1>
+                <h3 className="subtitle">Get a view of the last activities you performed 🏃🏼‍♀️</h3>
                 <br/>
-                {/* <h4 style={{color: "red"}}>Segmented buttons here</h4> */}
                 <SegmentedButtonsFilterDate/>
-                {/* {
-                    activities.map((act, i) => {
-                        return <ActivityCard activity={act}/>
-                    })
-                } */}
 
                 <List 
                     sx={{

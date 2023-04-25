@@ -7,7 +7,7 @@ import Profil from "./pages/Profil";
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { Paper, ThemeProvider, createTheme } from '@mui/material';
 import Footer from './components/Footer';
 
 const darkTheme = createTheme({
@@ -37,16 +37,18 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <NavigationRail handleChangeTheme={handleChangeTheme} theme={theme}/>
-          <div className='page'>
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='activities' element={<Activities/>}/>
-              <Route path='profil' element={<Profil/>}/>
-            </Routes>
-          </div>
+            <Paper>
+              <div className='page'>
+                <Routes>
+                  <Route path='/' element={<Home/>}/>
+                  <Route path='activities' element={<Activities/>}/>
+                  <Route path='profil' element={<Profil/>}/>
+                </Routes>
+              </div>
+              <Footer/>
+          </Paper>
         </BrowserRouter>
-        {/* Insert footer here */}
-        <Footer/>
+        
         <HelpIcon/>
       </ThemeProvider>
     </div>
