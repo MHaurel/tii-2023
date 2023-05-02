@@ -4,6 +4,7 @@ import NavigationRail from './components/NavigationRail';
 import Home from './pages/Home';
 import Activities from './pages/Activities';
 import Profil from "./pages/Profil";
+import Login from "./pages/Login";
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
@@ -43,6 +44,7 @@ function App() {
                   <Route path='/' element={<Home/>}/>
                   <Route path='activities' element={<Activities/>}/>
                   <Route path='profil' element={<Profil/>}/>
+                  <Route path='login' element={<Login/>}/>
                 </Routes>
               </div>
               <Footer/>
