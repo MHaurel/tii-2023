@@ -43,9 +43,9 @@ function NavigationRail({handleChangeTheme, theme}) {
             <Drawer className="navigationRail" variant="permanent" anchor="left" elevation={0} open={true}>
                 <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} />
                 <div className="navigation-buttons">
-                    <NavigationButton label="Home" icon="home" active={homeActive} onClick={handleChangeRouteHome}/>
-                    <NavigationButton label="Activities" icon="chart" active={chartActive} onClick={handleChangeRouteChart}/>
-                    <NavigationButton label="Logout" icon="logout"/>
+                    <NavigationButton label="Home" icon="home" active={homeActive} onClick={handleChangeRouteHome} theme={theme}/>
+                    <NavigationButton label="Activities" icon="chart" active={chartActive} onClick={handleChangeRouteChart} theme={theme}/>
+                    <NavigationButton label="Logout" icon="logout" theme={theme}/>
                 </div>
                 <Fab onClick={handleChangeTheme}>
                     <ThemeIcon theme={theme}/>

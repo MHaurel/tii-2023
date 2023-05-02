@@ -2,8 +2,6 @@ import { NordicWalkingOutlined, PedalBikeOutlined, SportsSoccerOutlined, WaterDr
 
 function ActivityIcon({type}) {
 
-    console.log(type);
-
     let item = null
     if (type === "footing") {
         item = <SportsSoccerOutlined/>

@@ -52,13 +52,15 @@ function Activities() {
                         width: '100%',
                         minWidth: 360,
                         bgcolor: 'background.paper',
+                        marginTop: 2,
+                        marginBottom: 2
                     }}
                 >
                 {
                     activities.map((act, i) => {
                         return (
                             <>
-                                <ListItem>
+                                <ListItem key={act.id}>
                                     <ListItemAvatar>
                                         <Avatar>
                                             <ActivityIcon type={act.typeOfActivity}/>
