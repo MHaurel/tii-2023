@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 50%;
     padding: 2rem;
-    background-color: #fff;
+    text-align: center;
 }
 
 .login-logo {
@@ -28,101 +28,19 @@
     margin-left: 20px;
 }
 
-.login-form {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.login-form label {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-.remember-me input[type="checkbox"] {
-    margin-right: 0.5rem;
-}
-
-.forgot-password {
-    text-align: right;
-}
-
-.remember-me,
-.forgot-password {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.remember-me label,
-.forgot-password a {
-  flex: 1;
-}
-
-.login-button {
-    background-color: #1E90FF;
-    color: #fff;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    width: 80%;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.social-login {
+.login-box {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
-}
-
-.google-button,
-.facebook-button {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    height: 1.2rem;
-    padding: 0.5rem;
-    background-color: #fff;
-    color: #1E90FF;
-    border: none;
-    border-radius: 5px;
-    margin-right: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
 }
 
-.google-button img,
-.facebook-button img {
-    width: 1.2rem;
-    height: auto;
-    margin-right: 0.5rem;
-}
-
-.google-button:hover,
-.facebook-button:hover {
-    background-color: #1E90FF;
-    color: #fff;
+.login-box > * {
+    flex: 1 1 auto;
+    margin: 0 1rem;
 }
 
 .login-illustration {
     width: 50%;
-    height: 100%;
-    background-color: #1E90FF;
     display: flex;
     justify-content: center;
     align-items: center;
