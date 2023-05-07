@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
 import { Paper, ThemeProvider, createTheme } from '@mui/material';
 import Footer from './components/Footer';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 const darkTheme = createTheme({
   palette: {
@@ -37,20 +38,21 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <NavigationRail handleChangeTheme={handleChangeTheme} theme={theme}/>
-            <Paper>
-              <div className='page'>
-                <Routes>
-                  <Route path='/' element={<Home/>}/>
-                  <Route path='activities' element={<Activities/>}/>
-                  <Route path='profil' element={<Profil/>}/>
-                  <Route path='login' element={<Login/>}/>
-                </Routes>
-              </div>
-              <Footer/>
-          </Paper>
-        </BrowserRouter>
-        
+          <AuthContextProvider>
+            <NavigationRail handleChangeTheme={handleChangeTheme} theme={theme}/>
+              <Paper>
+                <div className='page'>
+                  <Routes>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='activities' element={<Activities/>}/>
+                    <Route path='profil' element={<Profil/>}/>
+                    <Route path='login' element={<Login/>}/>
+                  </Routes>
+                </div>
+                <Footer/>
+            </Paper>
+          </AuthContextProvider>
+        </BrowserRouter>  
         <HelpIcon/>
       </ThemeProvider>
     </div>

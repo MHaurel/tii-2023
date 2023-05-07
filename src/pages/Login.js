@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
@@ -15,9 +15,13 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 
 import "./Login.css";
+import { AuthContext } from '../contexts/AuthContext';
 
 function Login() {
     const [showPassword, setShowPassword] = React.useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const {authToken, setAuthToken, login} = useContext(AuthContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -36,10 +40,12 @@ function Login() {
 
                 <Box component="form" sx={{"& > :not(style)": { m: 1 }}} noValidate autoComplete="off">
                     <div className='login-box'>
-                        <TextField id="email-phone" label="Email or Phone Number" variant="standard" />
+                        <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
                         <FormControl variant="standard" >
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
+                                value={password}
+                                onInput={e => setPassword(e.target.value)}
                                 id="standard-adornment-password"
                                 type={showPassword ? 'text' : 'password'}
                                 endAdornment={
@@ -63,7 +69,7 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <Button variant="contained">Log In</Button>
+                        <Button variant="contained" onClick={() => login(email, password)}>Log In</Button>
                     </div>
 
                     ------------------------------------------------------ or ------------------------------------------------------

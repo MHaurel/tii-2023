@@ -11,10 +11,6 @@
     cursor: pointer;
 }
 
-.navigationButton:hover {
-    background-color: #D6F4FF;
-}
-
 .navigationButton img {
     width: 24px;
     height: 24px;

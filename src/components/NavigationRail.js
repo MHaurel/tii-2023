@@ -6,13 +6,16 @@ import AvatarButton from "./AvatarButton";
 
 import "./NavigationRail.css"
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 function NavigationRail({handleChangeTheme, theme}) {
-    const [homeActive, setHomeActive] = useState(true);
+    const [homeActive, setHomeActive] = useState(false);
     const [chartActive, setChartActive] = useState(false);
     const selectedFile = localStorage.getItem("avatarImage");
+
+    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled} = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -41,17 +44,23 @@ function NavigationRail({handleChangeTheme, theme}) {
     const handleChangeRouteLogout = () => {
         setHomeActive(false)
         setChartActive(false);
+
+        clearTokens();
+
         navigate("/login");
     }
 
     return (
         <div>
             <Drawer className="navigationRail" variant="permanent" anchor="left" elevation={0} open={true}>
-                <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} />
+                {
+                    authToken === null ? <div style={{width: 48, height: 48}}></div> : <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} />
+                }
+                {/* <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} /> */}
                 <div className="navigation-buttons">
-                    <NavigationButton label="Home" icon="home" active={homeActive} onClick={handleChangeRouteHome} theme={theme}/>
-                    <NavigationButton label="Activities" icon="chart" active={chartActive} onClick={handleChangeRouteChart} theme={theme}/>
-                    <NavigationButton label="Logout" icon="logout" onClick={handleChangeRouteLogout} theme={theme}/>
+                    <NavigationButton label="Home" icon="home" disabled={sidebarDisabled} active={homeActive} onClick={handleChangeRouteHome} theme={theme}/>
+                    <NavigationButton label="Activities" icon="chart" disabled={sidebarDisabled} active={chartActive} onClick={handleChangeRouteChart} theme={theme}/>
+                    <NavigationButton label="Logout" icon="logout" disabled={sidebarDisabled} onClick={handleChangeRouteLogout} theme={theme}/>
                 </div>
                 <Fab onClick={handleChangeTheme}>
                     <ThemeIcon theme={theme}/>

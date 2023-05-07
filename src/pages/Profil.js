@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { Avatar, Card, CardContent, IconButton, Button } from "@mui/material";
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import { Navigate } from "react-router-dom";
 
+import { AuthContext } from "../contexts/AuthContext";
 import "./Profil.css";
 
 function Profil() {
@@ -14,6 +16,12 @@ function Profil() {
       setSelectedFile(savedImage);
     }
   }, []);
+
+  const {authToken, setAuthToken, login} = useContext(AuthContext);
+
+  if (authToken === null) {
+    return <Navigate to="/login"/>
+  }
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];

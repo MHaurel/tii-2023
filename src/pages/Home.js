@@ -3,9 +3,17 @@ import "./Home.css";
 import { Card, CardContent, Paper } from "@mui/material";
 import HomeLineChart from "../components/HomeLineChart";
 import Activity from "../models/Activity";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { Navigate } from "react-router-dom";
 
 
 function Home() {
+    const {authToken, setAuthToken, login} = useContext(AuthContext);
+
+    if (authToken === null) {
+        return <Navigate to="/login"/>
+    }
 
     // TO TEST
     let activity = new Activity(

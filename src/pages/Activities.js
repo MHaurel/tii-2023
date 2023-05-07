@@ -6,8 +6,16 @@ import ActivityIcon from "../components/ActivityIcon";
 import ActivitiesLineChart from "../components/ActivitiesLineChart";
 import SegmentedButtonsFilterDate from "../components/SegmentedButtonsFilterDate";
 import { List, Avatar, ListItem, ListItemAvatar, ListItemText, Divider } from "@mui/material";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { Navigate } from "react-router-dom";
 
 function Activities() {
+    const {authToken, setAuthToken, login} = useContext(AuthContext);
+
+    if (authToken === null) {
+        return <Navigate to="/login"/>
+    }
 
     // TO TEST
     let activity = new Activity(
