@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
@@ -22,6 +22,7 @@ function Login() {
     const [showPassword, setShowPassword] = React.useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [saveInfo, setSaveInfo] = useState(false);
     const {authToken, setAuthToken, login} = useContext(AuthContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -29,6 +30,27 @@ function Login() {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
+    useEffect(() => {
+        const email_ = localStorage.getItem("email");
+        const password_ = localStorage.getItem("password");
+        
+        setEmail(email_);
+        setPassword(password_);
+    })
+
+    const handleLogin = () => {
+        // Save input fields in LocalStorage
+        if (saveInfo) {
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password)
+        } else {
+            localStorage.setItem("email", "");
+            localStorage.setItem("password", "");
+        }
+        
+        login(email, password);
+    }
 
     return (
         <div className="login-page">
@@ -65,12 +87,12 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <FormControlLabel control={<Checkbox />} label="Remember me" />
+                        <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} />} label="Remember me" />
                         <Link href="#" underline="always" color="inherit" sx={[{ '&:hover': { fontWeight: 'bold' } }]}> Forgot password? </Link>
                     </div>
 
                     <div className='login-box'>
-                        <Button variant="contained" onClick={() => login(email, password)}>Log In</Button>
+                        <Button variant="contained" onClick={handleLogin}>Log In</Button>
                     </div>
 
                     ------------------------------------------------------ or ------------------------------------------------------

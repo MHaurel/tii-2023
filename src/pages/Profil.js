@@ -17,7 +17,7 @@ function Profil() {
     }
   }, []);
 
-  const {authToken, setAuthToken, login} = useContext(AuthContext);
+  const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser} = useContext(AuthContext);
 
   if (authToken === null) {
     return <Navigate to="/login"/>
@@ -36,9 +36,9 @@ function Profil() {
             <CardContent>
                 <h1>Profil</h1>
                 <div className="infos">
-                  <p> <strong> Nom : </strong> Doe </p>
-                  <p> <strong> Prénom : </strong> John </p>
-                  <p> <strong> Âge : </strong> 30 ans </p>
+                  <p> <strong> Nom : </strong> {user.firstname} </p>
+                  <p> <strong> Prénom : </strong> {user.lastname} </p>
+                  <p> <strong> Âge : </strong> 30 ans (⚠️ pas d'infos sur l'âge dans l'API) </p>
                 </div>
                 <Button variant="text"> Modifier </Button>
             </CardContent>

@@ -9,7 +9,7 @@ const AuthContext = createContext();
 function AuthContextProvider({children}) {
     const [authToken, setAuthToken] = useState(null);
     const [refreshToken, setRefreshToken] = useState(null);
-    const [userId, setUserId] = useState(null);
+    const [user, setUser] = useState(null);
     const [sidebarDisabled, setSidebarDisabled] = useState(true);
 
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ function AuthContextProvider({children}) {
     const login = (email, password) => {
         axios.post("https://fake-health-data-api.shrp.dev/auth/signin", {}, {
             auth: {
-              username: "john@doe.co", // Replace by `email`
+              username: "john@doe.com", // Replace by `email`
               password: "azerty" // Replace by `password`
             }
         })
@@ -45,10 +45,11 @@ function AuthContextProvider({children}) {
         setAuthToken(null);
         setRefreshToken(null);
         setSidebarDisabled(true);
+        setUser(null);
     }
 
     return (
-        <AuthContext.Provider value={{authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled}}>
+        <AuthContext.Provider value={{authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser}}>
             {children}
             <ToastContainer/>
         </AuthContext.Provider>

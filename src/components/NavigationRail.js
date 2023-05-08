@@ -15,7 +15,7 @@ function NavigationRail({handleChangeTheme, theme}) {
     const [chartActive, setChartActive] = useState(false);
     const selectedFile = localStorage.getItem("avatarImage");
 
-    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled} = useContext(AuthContext);
+    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser} = useContext(AuthContext);
 
     const navigate = useNavigate();
 

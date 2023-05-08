@@ -11,39 +11,14 @@ import { AuthContext } from "../contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 
 function Activities() {
-    const {authToken, setAuthToken, login} = useContext(AuthContext);
+    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser} = useContext(AuthContext);
 
     if (authToken === null) {
         return <Navigate to="/login"/>
     }
 
-    // TO TEST
-    let activity = new Activity(
-        1,
-        1,
-        "footing",
-        55,
-        0,
-        469,
-        "2022-01-02T17:45:21.000Z"
-    );
-
-    let activity2 = new Activity(
-        1,
-        1,
-        "bike",
-        55,
-        0,
-        203,
-        "2022-02-02T17:45:21.000Z"
-    );
-    
-    let activities = [
-        activity, activity2, activity, activity, activity, activity2, activity, activity
-    ];
-
     let activitiesData = []
-    activities.forEach((act, i) => {
+    user.activities.forEach((act, i) => {
         activitiesData.push({date: new CustomDate(act.date).getDate(), consumedCalories: act.consumedCalories})
     });
 
@@ -65,7 +40,7 @@ function Activities() {
                     }}
                 >
                 {
-                    activities.map((act, i) => {
+                    user.activities.map((act, i) => {
                         return (
                             <>
                                 <ListItem key={act.id}>
@@ -76,7 +51,7 @@ function Activities() {
                                     </ListItemAvatar>
                                     <ListItemText primary={act.getTypeOfActivity()} secondary={act.consumedCalories + "kcal lost" + " - " + act.date}/>
                                 </ListItem>
-                                {i+1 === activities.length ? <></> : <Divider variant="inset" component="li"/>}
+                                {i+1 === user.activities.length ? <></> : <Divider variant="inset" component="li"/>}
                             </>
                         )
                     })
