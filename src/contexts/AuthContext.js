@@ -1,6 +1,8 @@
 import { useContext, useState, createContext } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthContext = createContext();
 
@@ -12,10 +14,14 @@ function AuthContextProvider({children}) {
 
     const navigate = useNavigate();
 
+    const showLogError = () => {
+        toast("username / password is wrong")
+    }
+
     const login = (email, password) => {
         axios.post("https://fake-health-data-api.shrp.dev/auth/signin", {}, {
             auth: {
-              username: "john@doe.com", // Replace by `email`
+              username: "john@doe.co", // Replace by `email`
               password: "azerty" // Replace by `password`
             }
         })
@@ -29,7 +35,10 @@ function AuthContextProvider({children}) {
                 setSidebarDisabled(false);
                 navigate("/");
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                console.error(err);
+                showLogError();
+            })
     }
 
     const clearTokens = () => {
@@ -41,6 +50,7 @@ function AuthContextProvider({children}) {
     return (
         <AuthContext.Provider value={{authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled}}>
             {children}
+            <ToastContainer/>
         </AuthContext.Provider>
     );
 }
