@@ -2,6 +2,7 @@ import { useContext, useState, createContext } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { useJwt } from "react-jwt";
 import 'react-toastify/dist/ReactToastify.css';
 
 const AuthContext = createContext();
@@ -33,6 +34,7 @@ function AuthContextProvider({children}) {
                 setRefreshToken(refresh_token);
 
                 setSidebarDisabled(false);
+
                 navigate("/");
             })
             .catch(err => {

@@ -47,7 +47,7 @@ function Profil() {
             <Avatar
             className="avatar"
             sx={{ width: 300, height: 300 }}
-            src={selectedFile}
+            src={selectedFile === null ? `${process.env.PUBLIC_URL}/images/avatar/10-upscaled.png` : selectedFile}
             />
             <br/>
             <div className="button">

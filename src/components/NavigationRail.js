@@ -54,7 +54,7 @@ function NavigationRail({handleChangeTheme, theme}) {
         <div>
             <Drawer className="navigationRail" variant="permanent" anchor="left" elevation={0} open={true}>
                 {
-                    authToken === null ? <div style={{width: 48, height: 48}}></div> : <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} />
+                    authToken === null ? <div style={{width: 48, height: 48}}></div> : <AvatarButton src={selectedFile === null ? `${process.env.PUBLIC_URL}/images/avatar/10-upscaled.png` : selectedFile} onClick={handleChangeRouteProfil} />
                 }
                 {/* <AvatarButton src={selectedFile} onClick={handleChangeRouteProfil} /> */}
                 <div className="navigation-buttons">

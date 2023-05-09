@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import Person from "../models/Person";
 import CustomDate from "../models/CustomDate";
+import { useJwt } from "react-jwt";
 
 
 function Home() {
@@ -73,6 +74,19 @@ function Home() {
         }
     }, [])
 
+    const { decodedToken, isExpired } = useJwt(authToken);
+    
+    const bearerConfig = {
+        headers: { 'Authorization': `Bearer ${authToken}` }
+    };
+    // axios.get(`https://fake-health-data-api.shrp.dev/people?filterBy=id&filterValue=${decodedToken.id}`, bearerConfig)
+    //     .then(response => {
+    //         console.log(response)
+    //     })
+
+    console.log("decodedToken:", decodedToken);
+    console.log("isExpired:", isExpired);
+
     if (authToken === null) {
         return <Navigate to="/login"/>
     }
@@ -106,7 +120,6 @@ function Home() {
                 {
                     user === null ? <LinearProgress/> : <h2>Hello {user.firstname}</h2>
                 }
-                {/* <h2>Hello {user.firstname}</h2> */}
                 <p>Here are your weekly stats:</p>
                 
                 <div className="stats">
