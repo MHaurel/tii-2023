@@ -13,6 +13,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
 
 import "./Login.css";
 import { AuthContext } from '../contexts/AuthContext';
@@ -23,7 +24,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [saveInfo, setSaveInfo] = useState(false);
-    const {authToken, setAuthToken, login} = useContext(AuthContext);
+    const { authToken, setAuthToken, login } = useContext(AuthContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -34,7 +35,7 @@ function Login() {
     useEffect(() => {
         const email_ = localStorage.getItem("email");
         const password_ = localStorage.getItem("password");
-        
+
         setEmail(email_);
         setPassword(password_);
     })
@@ -48,7 +49,7 @@ function Login() {
             localStorage.setItem("email", "");
             localStorage.setItem("password", "");
         }
-        
+
         login(email, password);
     }
 
@@ -61,9 +62,13 @@ function Login() {
 
                 <h2 className="login-title"> Log In </h2>
 
-                <Box component="form" sx={{"& > :not(style)": { m: 1 }}} noValidate autoComplete="off">
+                <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
+                    
                     <div className='login-box'>
                         <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
+                    </div>
+
+                    <div className='login-box'>
                         <FormControl variant="standard" >
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
@@ -88,23 +93,27 @@ function Login() {
 
                     <div className='login-box'>
                         <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} />} label="Remember me" />
-                        <Link href="#" underline="always" color="inherit" sx={[{ '&:hover': { fontWeight: 'bold' } }]}> Forgot password? </Link>
+                    </div>
+
+                    <div className='login-box' style={{marginBottom: '24px'}}>
+                        <Link href="#" underline="always" color="inherit" sx={[{textAlign: 'left'}, { '&:hover': { fontWeight: 'bold' } }]}> Forgot password? </Link>
                     </div>
 
                     <div className='login-box'>
-                        <Button variant="contained" onClick={handleLogin}>Log In</Button>
+                        <Button variant='contained' size='large' onClick={handleLogin}>Log In</Button>
                     </div>
 
-                    ------------------------------------------------------ or ------------------------------------------------------
+                    <Divider>or</Divider>
 
                     <div className='login-box'>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />}>
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} >
                             Log in with Google
                         </Button>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />}>
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} >
                             Log in with Facebook
                         </Button>
                     </div>
+
                 </Box>
             </div>
 
