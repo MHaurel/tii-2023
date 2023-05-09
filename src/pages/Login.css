@@ -25,18 +25,15 @@
 
 .login-title {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 8px;
 }
 
 .login-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .login-box > * {
     flex: 1 1 auto;
-    margin: 0 1rem;
 }
 
 .login-illustration {
