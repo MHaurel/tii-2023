@@ -15,10 +15,10 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
-import "./Login.css";
+import "./Signup.css";
 import { AuthContext } from '../contexts/AuthContext';
 
-function Login() {
+function Signup() {
     const [showPassword, setShowPassword] = React.useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -53,21 +53,21 @@ function Login() {
     }
 
     return (
-        <div className="login-page">
-            <div className="login-container">
-                <div className="login-logo">
+        <div className="signup-page">
+            <div className="signup-container">
+                <div className="signup-logo">
                     <img src={process.env.PUBLIC_URL + '/images/FitTrack.png'} alt="logo" />
                 </div>
 
-                <h2 className="login-title"> Log In </h2>
+                <h2 className="signup-title"> Sign Up </h2>
 
                 <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
                     
-                    <div className='login-box'>
+                    <div className='signup-box'>
                         <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
                     </div>
 
-                    <div className='login-box'>
+                    <div className='signup-box'>
                         <FormControl variant="standard" >
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
@@ -90,41 +90,37 @@ function Login() {
                         </FormControl>
                     </div>
 
-                    <div className='login-box'>
+                    <div className='signup-box'>
                         <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} />} label="Remember me" />
                     </div>
 
-                    <div className='login-box' style={{marginBottom: '24px'}}>
-                        <Link href="#" underline="always" color="inherit" sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Forgot password? </Link>
+                    <div className='signup-box' style={{marginBottom: '24px'}}>
+                        <Link href='/login' underline='always' color='inherit' sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Already have an account ? Log in </Link>
                     </div>
 
-                    <div className='login-box'>
-                        <Button variant='contained' size='large' onClick={handleLogin}>Log In</Button>
-                    </div>
-
-                    <div className='login-box'>
-                        <Link href="/signup" underline="always" color="inherit" sx={[{ '&:hover': { textDecoration: 'none' } }]}> Don't have an account? Sign up </Link>
+                    <div className='signup-box'>
+                        <Button variant='contained' size='large' onClick={handleLogin}>Sign Up</Button>
                     </div>
 
                     <Divider>or</Divider>
 
-                    <div className='login-box'>
+                    <div className='signup-box'>
                         <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} >
-                            Log in with Google
+                            Sign up with Google
                         </Button>
                         <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} >
-                            Log in with Facebook
+                            Sign up with Facebook
                         </Button>
                     </div>
 
                 </Box>
             </div>
 
-            <div className="login-illustration">
+            <div className="signup-illustration">
                 <img src={process.env.PUBLIC_URL + '/images/weightIllustration1.png'} alt="weight illustration" />
             </div>
         </div>
     );
 }
 
-export default Login;
+export default Signup;

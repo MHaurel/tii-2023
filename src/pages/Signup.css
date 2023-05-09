@@ -1,0 +1,49 @@
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.signup-logo {
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.signup-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.signup-title {
+    text-align: left;
+    margin-left: 8px;
+}
+
+.signup-box {
+    display: flex;
+}
+
+.signup-box > * {
+    flex: 1 1 auto;
+}
+
+.signup-illustration {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-illustration img {
+    max-width: 100%;
+    height: auto;
+}
