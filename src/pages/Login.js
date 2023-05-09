@@ -16,7 +16,6 @@ import Avatar from '@mui/material/Avatar';
 
 import "./Login.css";
 import { AuthContext } from '../contexts/AuthContext';
-import { ToastContainer } from 'react-toastify';
 
 function Login() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -37,7 +36,7 @@ function Login() {
         
         setEmail(email_);
         setPassword(password_);
-    })
+    }, [])
 
     const handleLogin = () => {
         // Save input fields in LocalStorage

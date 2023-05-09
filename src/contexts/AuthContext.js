@@ -21,8 +21,8 @@ function AuthContextProvider({children}) {
     const login = (email, password) => {
         axios.post("https://fake-health-data-api.shrp.dev/auth/signin", {}, {
             auth: {
-              username: "john@doe.com", // Replace by `email`
-              password: "azerty" // Replace by `password`
+              username: email, // Replace by `email`
+              password: password // Replace by `password`
             }
         })
             .then(response => {
