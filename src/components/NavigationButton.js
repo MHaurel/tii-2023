@@ -8,7 +8,8 @@ function NavigationButton({label, icon, disabled, onClick, active, theme}) {
         <Button disabled={disabled} sx={{
                 backgroundColor: (active && disabled) ? "#ADE9FF" : "transparent",
                 '&:hover' : {
-                    backgroundColor: 'primary.main'
+                    backgroundColor: 'primary.main',
+                    color: "#000"
                 },
             }} onClick={onClick} className="navigationButton">
             <img src={process.env.PUBLIC_URL + `images/icons/${filePath}`} alt="Navigation Icon"/>

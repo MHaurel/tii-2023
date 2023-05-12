@@ -1,7 +1,10 @@
 import './HomePageAnimation.css';
 import HealthBar from './HealthBar';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 
 function HomePageAnimation() {
+    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser} = useContext(AuthContext);
 
     let fillPercentage = 10; // Will be dynamically obtained
 
@@ -14,9 +17,11 @@ function HomePageAnimation() {
         supportText = "Your objective is really far, take the time to enjoy activities and make steps towards your goal !"
     }
 
+    const gender = user === null ? "0" : user.gender;
+
     return(
         <div className="divAnimation">
-            <img src={process.env.PUBLIC_URL + "/images/weightIllustration1.png"} className='illustration'/>
+            <img src={process.env.PUBLIC_URL + "/images/weightIllustration" + gender + ".png"} className='illustration'/>
             <div className='healthBar'>
                 <HealthBar fillPercentage={fillPercentage}/>
                 <p>{supportText}</p>

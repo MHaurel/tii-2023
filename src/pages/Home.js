@@ -1,6 +1,6 @@
 import HomePageAnimation from "../components/HomePageAnimation";
 import "./Home.css";
-import { Card, CardContent, CircularProgress, LinearProgress, Paper } from "@mui/material";
+import { Card, CardContent, CircularProgress, LinearProgress, Paper, Typography } from "@mui/material";
 import HomeLineChart from "../components/HomeLineChart";
 import Activity from "../models/Activity";
 import { useContext, useEffect } from "react";
@@ -95,7 +95,7 @@ function Home() {
     if (user !== null) {
         if (user.activities !== null) {
             user.activities.forEach((act, i) => {
-                activitiesData.push({date: new CustomDate(act.date).getDate(), consumedCalories: act.consumedCalories})
+                activitiesData.push({date: act.getDate(), consumedCalories: act.consumedCalories})
             });
         }
         
@@ -124,7 +124,7 @@ function Home() {
                 
                 <div className="stats">
                     <div >
-                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined" color="primary">
+                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined" >
                             <CardContent className="statCard">
                                 <span>436</span>
                                 <p>kcal lost this week</p>

@@ -8,10 +8,17 @@
 }
 
 .data-vis > div {
-    margin-top: 30vh;
+    /* margin-top: 30vh; */
     margin-left: 8vw;
 }
 
 .subtitle {
     font-weight: normal;
+}
+
+.chartWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

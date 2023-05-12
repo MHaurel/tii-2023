@@ -7,7 +7,7 @@ function HomeLineChart({data}) {
         <LineChart width={1000} height={600} data={data}>
             <XAxis dataKey="date"/>
             <YAxis/>
-            <Tooltip/>
+            <Tooltip />
             <Legend/>
             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
             <Line type="monotone" dataKey="consumedCalories" stroke="#7196CE" />

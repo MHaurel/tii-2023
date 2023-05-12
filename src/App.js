@@ -15,6 +15,21 @@ import { AuthContextProvider } from './contexts/AuthContext';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark'
+  },
+  components: {
+    'MuiCardContent': {
+      'styleOverrides': {
+        'root': {
+          'color': "#000"
+        }
+      }
+    },
+    
+    MuiTooltip: {
+      tooltip: {
+        color: 'red'
+      }
+    }
   }
 });
 
@@ -50,10 +65,11 @@ function App() {
                   </Routes>
                 </div>
                 <Footer/>
+                <HelpIcon/>
             </Paper>
           </AuthContextProvider>
         </BrowserRouter>  
-        <HelpIcon/>
+        
       </ThemeProvider>
     </div>
   );

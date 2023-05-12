@@ -8,11 +8,15 @@ class Activity {
         this.duration = duration
         this.numberOfSteps = numberOfSteps
         this.consumedCalories = consumedCalories
-        this.date = new CustomDate(date).getDate();
+        this.date = new CustomDate(date);
     }
 
     getTypeOfActivity() {
         return this.typeOfActivity[0].toUpperCase() + this.typeOfActivity.slice(1)
+    }
+
+    getDate() {
+        return this.date.getDate();
     }
 }
 

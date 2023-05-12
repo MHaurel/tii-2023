@@ -10,6 +10,18 @@ class CustomDate {
     getDate() {
         return `${this.month}/${this.day}/${this.year}`
     }
+
+    getMonth() {
+        return this.month;
+    }
+
+    getYear() {
+        return this.year;
+    }
+
+    getDay() {
+        return this.day;
+    }
 }
 
 export default CustomDate;
