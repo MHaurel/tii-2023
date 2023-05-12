@@ -11,6 +11,7 @@ import HelpIcon from './components/HelpIcon';
 import { Paper, ThemeProvider, createTheme } from '@mui/material';
 import Footer from './components/Footer';
 import { AuthContextProvider } from './contexts/AuthContext';
+import Signup from './pages/Signup';
 
 const darkTheme = createTheme({
   palette: {
@@ -47,6 +48,7 @@ function App() {
                     <Route path='activities' element={<Activities/>}/>
                     <Route path='profil' element={<Profil/>}/>
                     <Route path='login' element={<Login/>}/>
+                    <Route path='signup' element={<Signup/>}/>
                   </Routes>
                 </div>
                 <Footer/>
