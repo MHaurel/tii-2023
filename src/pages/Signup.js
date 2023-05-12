@@ -5,25 +5,25 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
 import "./Signup.css";
-import { AuthContext } from '../contexts/AuthContext';
+// import { AuthContext } from '../contexts/AuthContext';
 
 function Signup() {
     const [showPassword, setShowPassword] = React.useState(false);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [saveInfo, setSaveInfo] = useState(false);
-    const { authToken, setAuthToken, login } = useContext(AuthContext);
+    // const [saveInfo, setSaveInfo] = useState(false);
+    // const { authToken, setAuthToken, login } = useContext(AuthContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -31,26 +31,26 @@ function Signup() {
         event.preventDefault();
     };
 
-    useEffect(() => {
-        const email_ = localStorage.getItem("email");
-        const password_ = localStorage.getItem("password");
+    // useEffect(() => {
+    //     const email_ = localStorage.getItem("email");
+    //     const password_ = localStorage.getItem("password");
 
-        setEmail(email_);
-        setPassword(password_);
-    }, [])
+    //     setEmail(email_);
+    //     setPassword(password_);
+    // }, [])
 
-    const handleLogin = () => {
-        // Save input fields in LocalStorage
-        if (saveInfo) {
-            localStorage.setItem("email", email);
-            localStorage.setItem("password", password)
-        } else {
-            localStorage.setItem("email", "");
-            localStorage.setItem("password", "");
-        }
+    // const handleLogin = () => {
+    //     // Save input fields in LocalStorage
+    //     if (saveInfo) {
+    //         localStorage.setItem("email", email);
+    //         localStorage.setItem("password", password)
+    //     } else {
+    //         localStorage.setItem("email", "");
+    //         localStorage.setItem("password", "");
+    //     }
 
-        login(email, password);
-    }
+    //     login(email, password);
+    // }
 
     return (
         <div className="signup-page">
@@ -62,6 +62,14 @@ function Signup() {
                 <h2 className="signup-title"> Sign Up </h2>
 
                 <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
+
+                    <div className='signup-box'>
+                        <TextField value={firstName} onInput={e => setFirstName(e.target.value)} id="first-name" label="First Name" variant="standard" />
+                    </div>
+
+                    <div className='signup-box'>
+                        <TextField value={lastName} onInput={e => setLastName(e.target.value)} id="last-name" label="Last Name" variant="standard" />
+                    </div>
                     
                     <div className='signup-box'>
                         <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
@@ -91,15 +99,32 @@ function Signup() {
                     </div>
 
                     <div className='signup-box'>
-                        <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} />} label="Remember me" />
-                    </div>
-
-                    <div className='signup-box' style={{marginBottom: '24px'}}>
-                        <Link href='/login' underline='always' color='inherit' sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Already have an account ? Log in </Link>
+                        <FormControl variant='standard'>
+                            <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
+                            <Input
+                                id="standard-adornment-password"
+                                type={showPassword ? 'text' : 'password'}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                        >
+                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                            />
+                        </FormControl>
                     </div>
 
                     <div className='signup-box'>
-                        <Button variant='contained' size='large' onClick={handleLogin}>Sign Up</Button>
+                        <Button variant='contained' size='large'>Sign Up</Button>
+                    </div>
+
+                    <div className='signup-box' style={{marginBottom: '24px'}}>
+                        <Link href='/login' underline='always' color='inherit' sx={[{ '&:hover': { textDecoration: 'none' } }]}> Already have an account ? Log in </Link>
                     </div>
 
                     <Divider>or</Divider>
