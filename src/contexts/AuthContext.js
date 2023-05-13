@@ -15,10 +15,6 @@ function AuthContextProvider({children}) {
 
     const navigate = useNavigate();
 
-    const showLogError = () => {
-        toast("username / password is wrong")
-    }
-
     const login = (email, password) => {
         axios.post("https://fake-health-data-api.shrp.dev/auth/signin", {}, {
             auth: {
@@ -39,7 +35,30 @@ function AuthContextProvider({children}) {
             })
             .catch(err => {
                 console.error(err);
-                showLogError();
+                toast("username / password is wrong");
+            })
+    }
+
+    const signup = (firstname, lastname, email, password) => {
+        const signUpPayload = {
+            'firstname': firstname,
+            'lastname': lastname,
+            'email': email,
+            'password': password
+        }
+
+        axios.post("https://fake-health-data-api.shrp.dev/auth/signup", signUpPayload)
+            .then(response => {
+                toast("Account has been created, you can log in")
+                navigate("/login");
+            })
+            .catch(err => {
+                let status = err.response.status;
+                if (status === 409) {
+                    toast("An account with these information already exists");
+                } else {
+                    toast("An error happened");
+                }
             })
     }
 
@@ -51,7 +70,7 @@ function AuthContextProvider({children}) {
     }
 
     return (
-        <AuthContext.Provider value={{authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser}}>
+        <AuthContext.Provider value={{authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser, signup}}>
             {children}
             <ToastContainer/>
         </AuthContext.Provider>

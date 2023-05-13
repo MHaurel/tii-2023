@@ -14,6 +14,7 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
 import "./Signup.css";
+import { AuthContext } from '../contexts/AuthContext';
 // import { AuthContext } from '../contexts/AuthContext';
 
 function Signup() {
@@ -22,8 +23,8 @@ function Signup() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const [saveInfo, setSaveInfo] = useState(false);
-    // const { authToken, setAuthToken, login } = useContext(AuthContext);
+    
+    const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser, signup} = useContext(AuthContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -31,26 +32,9 @@ function Signup() {
         event.preventDefault();
     };
 
-    // useEffect(() => {
-    //     const email_ = localStorage.getItem("email");
-    //     const password_ = localStorage.getItem("password");
-
-    //     setEmail(email_);
-    //     setPassword(password_);
-    // }, [])
-
-    // const handleLogin = () => {
-    //     // Save input fields in LocalStorage
-    //     if (saveInfo) {
-    //         localStorage.setItem("email", email);
-    //         localStorage.setItem("password", password)
-    //     } else {
-    //         localStorage.setItem("email", "");
-    //         localStorage.setItem("password", "");
-    //     }
-
-    //     login(email, password);
-    // }
+    const handleSignUp = () => {
+        signup(firstName, lastName, email, password);
+    }
 
     return (
         <div className="signup-page">
@@ -120,7 +104,7 @@ function Signup() {
                     </div>
 
                     <div className='signup-box'>
-                        <Button variant='contained' size='large'>Sign Up</Button>
+                        <Button variant='contained' onClick={handleSignUp} size='large'>Sign Up</Button>
                     </div>
 
                     <div className='signup-box' style={{marginBottom: '24px'}}>

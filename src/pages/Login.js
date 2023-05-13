@@ -32,14 +32,14 @@ function Login() {
     };
 
     useEffect(() => {
-        // const email_ = localStorage.getItem("email");
-        // const password_ = localStorage.getItem("password");
+        const email_ = localStorage.getItem("email");
+        const password_ = localStorage.getItem("password");
 
-        // setEmail(email_);
-        // setPassword(password_);
+        setEmail(email_);
+        setPassword(password_);
 
-        // TO DELETE
-        handleLogin()
+        // TO DELETE --> FOR DEV ONLY
+        // handleLogin()
     }, [])
 
     const handleLogin = () => {
@@ -52,8 +52,10 @@ function Login() {
             localStorage.setItem("password", "");
         }
 
+        login(email, password)
+
+        // TO DELETE --> FOR DEV ONLY
         // login(email, password);
-        login("john@doe.com", "azerty")
     }
 
     return (
