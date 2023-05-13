@@ -10,6 +10,9 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import ActivitiesPieChart from "../components/ActivitiesPieChart";
+import WeightLineChart from "../components/WeightLineChart";
+
+const CAL_PER_KG = 7700;
 
 function Activities() {
     const {authToken, setAuthToken, login, clearTokens, sidebarDisabled, setSidebarDisabled, user, setUser} = useContext(AuthContext);
@@ -71,6 +74,15 @@ function Activities() {
         activitiesDataPie.push({name: activity, value: activitiesDataPieDict[activity]})
     }
 
+    let weightData = [];
+    let counter_ = 0
+    let initialWeight = user.weightStart;
+    console.log("user.weightGoal", user.weightGoal)
+    activities.forEach((act, i) => {
+        counter_ += act.consumedCalories;
+        weightData.push({date: act.getDate(), weight: initialWeight - Math.floor(counter_ / CAL_PER_KG)});
+    });
+
     return (
         <div className="wrapper">
             <div>
@@ -124,7 +136,8 @@ function Activities() {
             </div>
             <div className="data-vis">
                 <Paper sx={{width:600, paddingY: 10, marginBottom:10}} className="chartWrapper">                
-                    <ActivitiesLineChart data={activitiesData}/>
+                    <ActivitiesLineChart data={activitiesData} width={500} height={300}/>
+                    <WeightLineChart data={weightData} goal={user.weightGoal}/>
                     <ActivitiesPieChart data={activitiesDataPie}/>
                 </Paper>
             </div>

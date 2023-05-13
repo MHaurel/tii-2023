@@ -1,10 +1,10 @@
 import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, Legend } from "recharts";
 
-function ActivitiesLineChart({data}) {
+function ActivitiesLineChart({data, width, height}) {
     return (
-        <LineChart width={500} height={300} data={data}>
+        <LineChart width={width} height={height} data={data}>
             <XAxis dataKey="date"/>
-            <YAxis/>
+            <YAxis domain={['dataMin - 50', 'dataMax + 50']}/>
             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
             <Tooltip/>
             <Legend/>

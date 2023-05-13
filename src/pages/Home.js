@@ -1,7 +1,6 @@
 import HomePageAnimation from "../components/HomePageAnimation";
 import "./Home.css";
 import { Card, CardContent, CircularProgress, LinearProgress, Paper, Typography } from "@mui/material";
-import HomeLineChart from "../components/HomeLineChart";
 import Activity from "../models/Activity";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
@@ -10,6 +9,7 @@ import axios from "axios";
 import Person from "../models/Person";
 import CustomDate from "../models/CustomDate";
 import { useJwt } from "react-jwt";
+import ActivitiesLineChart from "../components/ActivitiesLineChart";
 
 
 function Home() {
@@ -154,7 +154,7 @@ function Home() {
 
             <div className="homeLineChart">
                 {
-                    user === null ? <CircularProgress/> : <HomeLineChart data={activitiesData}/>
+                    user === null ? <CircularProgress/> : <ActivitiesLineChart data={activitiesData} width={800} height={500}/>
                 }
                 {/* <HomeLineChart data={activitiesData}/> */}
             </div>
