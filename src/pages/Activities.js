@@ -4,7 +4,7 @@ import Activity from "../models/Activity";
 import CustomDate from "../models/CustomDate";
 import ActivityIcon from "../components/ActivityIcon";
 import ActivitiesLineChart from "../components/ActivitiesLineChart";
-import SegmentedButtonsFilterDate from "../components/SegmentedButtonsFilterDate";
+// import SegmentedButtonsFilterDate from "../components/SegmentedButtonsFilterDate";
 import { List, Avatar, ListItem, ListItemAvatar, ListItemText, Divider, ToggleButton, ToggleButtonGroup, Paper } from "@mui/material";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";

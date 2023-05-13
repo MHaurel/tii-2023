@@ -98,7 +98,6 @@ function Home() {
                 activitiesData.push({date: act.getDate(), consumedCalories: act.consumedCalories})
             });
         }
-        
     }
 
     return (
