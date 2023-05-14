@@ -3,11 +3,6 @@
     margin: 1rem 0;
 }
 
-.activity:hover {
-    /*background-color: #faebd7;*/
-    /*cursor: pointer;*/
-}
-
 .activityWrapper{
     display: flex;
     flex-direction: row;

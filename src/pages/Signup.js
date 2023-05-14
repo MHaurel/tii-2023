@@ -48,19 +48,19 @@ function Signup() {
                 <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
 
                     <div className='signup-box'>
-                        <TextField value={firstName} onInput={e => setFirstName(e.target.value)} id="first-name" label="First Name" variant="standard" />
+                        <TextField value={firstName} onInput={e => setFirstName(e.target.value)} id="first-name" label="First Name" variant="standard" color='secondary' />
                     </div>
 
                     <div className='signup-box'>
-                        <TextField value={lastName} onInput={e => setLastName(e.target.value)} id="last-name" label="Last Name" variant="standard" />
+                        <TextField value={lastName} onInput={e => setLastName(e.target.value)} id="last-name" label="Last Name" variant="standard" color='secondary' />
                     </div>
                     
                     <div className='signup-box'>
-                        <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
+                        <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" color='secondary'/>
                     </div>
 
                     <div className='signup-box'>
-                        <FormControl variant="standard" >
+                        <FormControl variant="standard" color='secondary'>
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
                                 value={password}
@@ -83,7 +83,7 @@ function Signup() {
                     </div>
 
                     <div className='signup-box'>
-                        <FormControl variant='standard'>
+                        <FormControl variant='standard' color='secondary'>
                             <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
                             <Input
                                 id="standard-adornment-password"
@@ -104,7 +104,7 @@ function Signup() {
                     </div>
 
                     <div className='signup-box'>
-                        <Button variant='contained' onClick={handleSignUp} size='large'>Sign Up</Button>
+                        <Button variant='contained' color='secondary' onClick={handleSignUp} size='large'>Sign Up</Button>
                     </div>
 
                     <div className='signup-box' style={{marginBottom: '24px'}}>
@@ -114,10 +114,10 @@ function Signup() {
                     <Divider>or</Divider>
 
                     <div className='signup-box'>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} >
+                        <Button variant="outlined" color='secondary' startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} >
                             Sign up with Google
                         </Button>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} >
+                        <Button variant="outlined" color='secondary' startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} >
                             Sign up with Facebook
                         </Button>
                     </div>

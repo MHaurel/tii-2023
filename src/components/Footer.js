@@ -22,11 +22,9 @@ function Footer() {
            </div>
 
            <div className='siteMap'>
-               
-                <a href='/'>Home</a>
-                <a href='activities'>Activities</a>
-                {/* HREF to be determined */}
-                <a>Profile</a> 
+                <Link to="/">Home</Link>
+                <Link to="/activities">Activities</Link>
+                <Link to="/profile">Profile</Link>
            </div>
         </div>
     </Paper>

@@ -1,3 +1,5 @@
+import { ThemeContext, useTheme } from "@emotion/react";
+import { useContext } from "react";
 import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, Legend,  } from "recharts";
 
 function ActivitiesLineChart({data, width, height}) {

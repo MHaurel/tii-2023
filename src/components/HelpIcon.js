@@ -35,7 +35,6 @@ function HelpIcon(){
                     :
                 <div>
                     <Dialog open={dialogOpen} TransitionComponent={Transition}>
-                        {/* <DialogTitle>Information</DialogTitle> */}
                         <DialogContent>
                             <DialogContentText>
                                 <h1 className="InfoTitle">How is weight loss calculated?</h1>
@@ -45,11 +44,11 @@ function HelpIcon(){
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClick}>Ok</Button>
+                            <Button onClick={handleClick} color="secondary">Ok</Button>
                         </DialogActions>
                     </Dialog>
                     <div className="helpIcon">
-                        <Fab sx={{backgroundColor: 'primary.main'}} onClick={handleClick} aria-label="help">
+                        <Fab onClick={handleClick} aria-label="help">
                             <img style={{width: 24}} src={process.env.PUBLIC_URL + "images/icons/help.png"} alt="question mark icon"/>
                         </Fab>
                     </div>

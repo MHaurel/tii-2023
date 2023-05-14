@@ -38,7 +38,7 @@ function NavigationRail({handleChangeTheme, theme}) {
     const handleChangeRouteProfil = () => {
         setHomeActive(false)
         setChartActive(false);
-        navigate("/profil");
+        navigate("/profile");
     }
 
     const handleChangeRouteLogout = () => {

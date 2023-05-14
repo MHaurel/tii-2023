@@ -40,7 +40,7 @@ function Profil() {
                   <p> <strong> Prénom : </strong> {user.lastname} </p>
                   <p> <strong> Âge : </strong> 30 ans (⚠️ pas d'infos sur l'âge dans l'API) </p>
                 </div>
-                <Button variant="text"> Modifier </Button>
+                <Button variant="text" color="secondary"> Modifier </Button>
             </CardContent>
         </Card>
         <div className="avatar-container">
@@ -51,7 +51,7 @@ function Profil() {
             />
             <br/>
             <div className="button">
-                <IconButton color="primary" aria-label="upload picture" component="label">
+                <IconButton color="secondary" aria-label="upload picture" component="label">
                     <input
                         type="file"
                         accept="image/*"

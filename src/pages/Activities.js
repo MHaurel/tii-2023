@@ -91,7 +91,7 @@ function Activities() {
 
                 <ToggleButtonGroup
                     orientation="horizontal"
-                    color="primary"
+                    color="secondary"
                     value={filter}
                     exclusive
                     onChange={handleFilterChange}

@@ -70,11 +70,11 @@ function Login() {
                 <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
                     
                     <div className='login-box'>
-                        <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" />
+                        <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" color='secondary' />
                     </div>
 
                     <div className='login-box'>
-                        <FormControl variant="standard" >
+                        <FormControl variant="standard" color='secondary' >
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
                                 value={password}
@@ -97,7 +97,7 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} />} label="Remember me" />
+                        <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} color='secondary' />} label="Remember me" />
                     </div>
 
                     <div className='login-box' style={{marginBottom: '24px'}}>
@@ -105,7 +105,7 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <Button variant='contained' size='large' onClick={handleLogin}>Log In</Button>
+                        <Button variant='contained' size='large' onClick={handleLogin} color='secondary'>Log In</Button>
                     </div>
 
                     <div className='login-box'>
@@ -115,10 +115,10 @@ function Login() {
                     <Divider>or</Divider>
 
                     <div className='login-box'>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} >
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} color='secondary' >
                             Log in with Google
                         </Button>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} >
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} color='secondary' >
                             Log in with Facebook
                         </Button>
                     </div>
