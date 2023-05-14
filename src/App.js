@@ -15,7 +15,32 @@ import Signup from './pages/Signup';
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark'
+    mode: 'dark',
+    primary : {
+      light: '#F0FBFF',
+      main: '#DEF0F8',
+      dark: '#ADE9FF'
+    },
+    secondary: {
+      light: '#F3E5F5',
+      main: '#CE93D8', 
+      dark: '#AB47BC',
+    },
+    success: {
+      light: '#6DB286',
+      main: '#499F68', 
+      dark: '#428F5E',
+    },
+    warning: {
+      light: '#FFBF4D',
+      main: '#FFAF21', 
+      dark: '#E69E1E',
+    },
+    error: {
+      light: '#E4746C',
+      main: '#DD5147', 
+      dark: '#C74940',
+    },
   },
   components: {
     'MuiCardContent': {
@@ -40,8 +65,7 @@ const lightTheme = createTheme({
     primary : {
       light: '#F0FBFF',
       main: '#DEF0F8',
-      // dark: '#ADE9FF',
-      dark: "#000000"
+      dark: '#ADE9FF'  
     },
     secondary: {
       light: '#B6C3D7',

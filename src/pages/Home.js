@@ -123,7 +123,7 @@ function Home() {
                 
                 <div className="stats">
                     <div >
-                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined" >
+                        <Card sx={{borderColor: "#B6C3D7", backgroundColor: "secondary.light"}} className="styleCard" variant="outlined" >
                             <CardContent className="statCard">
                                 <span>436</span>
                                 <p>kcal lost this week</p>
@@ -132,7 +132,7 @@ function Home() {
                     </div>
                     
                     <div>
-                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined">
+                        <Card sx={{borderColor: "#B6C3D7", backgroundColor: "secondary.light"}} className="styleCard" variant="outlined">
                             <CardContent className="statCard">
                                 <span>3</span>
                                 <p>activities performed this week</p>
@@ -141,7 +141,7 @@ function Home() {
                     </div>
 
                     <div>
-                        <Card sx={{borderColor: "#B6C3D7"}} className="styleCard" variant="outlined">
+                        <Card sx={{borderColor: "#B6C3D7", backgroundColor: "secondary.light"}} className="styleCard" variant="outlined">
                             <CardContent className="statCard">
                                 <span>20000</span>
                                 <p>steps walked</p>
