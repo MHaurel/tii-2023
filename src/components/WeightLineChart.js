@@ -4,7 +4,7 @@ function WeightLineChart({data, goal}) {
     return (
         <LineChart width={500} height={300} data={data}>
             <XAxis dataKey="date"/>
-            <YAxis domain={[goal - 3, 'dataMax']}/>
+            <YAxis domain={[goal - 3, 'dataMax + 3']}/>
             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
             <Tooltip/>
             <Legend/>

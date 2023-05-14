@@ -1,0 +1,9 @@
+.toast-success {
+    background-color: #499F68;
+    color: white;
+}
+
+.toast-error {
+    background-color: #DD5147;
+    color: white;
+}

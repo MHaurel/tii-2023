@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { useJwt } from "react-jwt";
 import 'react-toastify/dist/ReactToastify.css';
+import "./AuthContext.css";
 
 const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ function AuthContextProvider({children}) {
     const [refreshToken, setRefreshToken] = useState(null);
     const [user, setUser] = useState(null);
     const [sidebarDisabled, setSidebarDisabled] = useState(true);
+    // const [activeSidebarButton, setActiveSidebarButton] = useState("home");
 
     const navigate = useNavigate();
 
@@ -35,7 +37,9 @@ function AuthContextProvider({children}) {
             })
             .catch(err => {
                 console.error(err);
-                toast("username / password is wrong");
+                toast("username / password is wrong", {
+                    className: 'toast-error'
+                });
             })
     }
 
@@ -49,15 +53,21 @@ function AuthContextProvider({children}) {
 
         axios.post("https://fake-health-data-api.shrp.dev/auth/signup", signUpPayload)
             .then(response => {
-                toast("Account has been created, you can log in")
+                toast("Account has been created, you can log in", {
+                    className: 'toast-sucess'
+                })
                 navigate("/login");
             })
             .catch(err => {
                 let status = err.response.status;
                 if (status === 409) {
-                    toast("An account with these information already exists");
+                    toast("An account with these information already exists", {
+                        className: 'toast-error'
+                    });
                 } else {
-                    toast("An error happened");
+                    toast("An error happened", {
+                        className: 'toast-error'
+                    });
                 }
             })
     }

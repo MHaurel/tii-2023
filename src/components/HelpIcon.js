@@ -37,7 +37,7 @@ function HelpIcon(){
                     <Dialog open={dialogOpen} TransitionComponent={Transition}>
                         <DialogContent>
                             <DialogContentText>
-                                <h1 className="InfoTitle">How is weight loss calculated?</h1>
+                                <h1 className="InfoTitle">How is weight loss calculated? 💡</h1>
                                     FitTrack helps you keeping track of the activities you realized over time and records the time you practice each activity as well as the number of calories lost. <br/>
                                     <br/> To calculate how much weight you lost by realizing different activities, we use this simple rule : a deficit of 7 700 kcals leads to loosing 1kg. 
                                     In this calculus, we also take into account the fact that everyone has a daily intake of about 1 800 to 2 400 kcal.

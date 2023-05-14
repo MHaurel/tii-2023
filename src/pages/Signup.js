@@ -15,7 +15,6 @@ import Divider from '@mui/material/Divider';
 
 import "./Signup.css";
 import { AuthContext } from '../contexts/AuthContext';
-// import { AuthContext } from '../contexts/AuthContext';
 
 function Signup() {
     const [showPassword, setShowPassword] = React.useState(false);

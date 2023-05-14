@@ -6,7 +6,7 @@ function NavigationButton({label, icon, disabled, onClick, active, theme}) {
 
     return (
         <Button color="secondary" disabled={disabled} sx={{
-                backgroundColor: (active && disabled) ? "#ADE9FF" : "transparent",
+                backgroundColor: (active && !disabled) ? "secondary.light" : "transparent",
                 '&:hover' : {
                     backgroundColor: 'secondary.main',
                     color: "#000"
