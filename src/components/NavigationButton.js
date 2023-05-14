@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import "./NavigationButton.css";
 
 function NavigationButton({label, icon, disabled, onClick, active, theme}) {
@@ -13,7 +13,8 @@ function NavigationButton({label, icon, disabled, onClick, active, theme}) {
                 },
             }} onClick={onClick} className="navigationButton">
             <img src={process.env.PUBLIC_URL + `images/icons/${filePath}`} alt="Navigation Icon"/>
-            <p>{label}</p>
+            {/* <Typography variant="p" component="p" color='primary.dark'>{label}</Typography> */}
+            <p style={{color: 'secondary.main'}}>{label}</p>
         </Button>
     )
 }

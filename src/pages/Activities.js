@@ -4,8 +4,7 @@ import Activity from "../models/Activity";
 import CustomDate from "../models/CustomDate";
 import ActivityIcon from "../components/ActivityIcon";
 import ActivitiesLineChart from "../components/ActivitiesLineChart";
-// import SegmentedButtonsFilterDate from "../components/SegmentedButtonsFilterDate";
-import { List, Avatar, ListItem, ListItemAvatar, ListItemText, Divider, ToggleButton, ToggleButtonGroup, Paper } from "@mui/material";
+import { List, Avatar, ListItem, ListItemAvatar, ListItemText, Divider, ToggleButton, ToggleButtonGroup, Paper, Typography } from "@mui/material";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Navigate } from "react-router-dom";
@@ -136,8 +135,13 @@ function Activities() {
             </div>
             <div className="data-vis">
                 <Paper sx={{width:600, paddingY: 10, marginBottom:10}} className="chartWrapper">                
+                    <Typography variant="h6" component="h2">Evolution of your weight {filter !== 'all' ? "this " + filter : 'since you started'}</Typography>
+                    <WeightLineChart data={weightData} goal={user.weightGoal}/> 
+                    <br/>
+                    <Typography variant="h6" component="h2">Calories lost  {filter !== 'all' ? "this " + filter : 'since you started'}</Typography>              
                     <ActivitiesLineChart data={activitiesData} width={500} height={300}/>
-                    <WeightLineChart data={weightData} goal={user.weightGoal}/>
+                    <br/>
+                    <Typography variant="h6" component="h2">Activities performed {filter !== 'all' ? "this " + filter : "since you started"}</Typography>
                     <ActivitiesPieChart data={activitiesDataPie}/>
                 </Paper>
             </div>

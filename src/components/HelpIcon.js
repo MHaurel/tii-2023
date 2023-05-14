@@ -1,4 +1,4 @@
-import { Fab } from "@mui/material"
+import { Fab, colors } from "@mui/material"
 import "./HelpIcon.css"
 import Dialog from "@mui/material/Dialog"
 import DialogTitle from "@mui/material/DialogTitle"
@@ -35,16 +35,21 @@ function HelpIcon(){
                     :
                 <div>
                     <Dialog open={dialogOpen} TransitionComponent={Transition}>
-                        <DialogTitle>Information</DialogTitle>
+                        {/* <DialogTitle>Information</DialogTitle> */}
                         <DialogContent>
-                            <DialogContentText>Lorem Ipsum Lorem Ipsum Lorem Ipsum</DialogContentText>
+                            <DialogContentText>
+                                <h1 className="InfoTitle">How is weight loss calculated?</h1>
+                                    FitTrack helps you keeping track of the activities you realized over time and records the time you practice each activity as well as the number of calories lost. <br/>
+                                    <br/> To calculate how much weight you lost by realizing different activities, we use this simple rule : a deficit of 7 700 kcals leads to loosing 1kg. 
+                                    In this calculus, we also take into account the fact that everyone has a daily intake of about 1 800 to 2 400 kcal.
+                            </DialogContentText>
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={handleClick}>Ok</Button>
                         </DialogActions>
                     </Dialog>
                     <div className="helpIcon">
-                        <Fab onClick={handleClick} aria-label="help">
+                        <Fab sx={{backgroundColor: 'primary.main'}} onClick={handleClick} aria-label="help">
                             <img style={{width: 24}} src={process.env.PUBLIC_URL + "images/icons/help.png"} alt="question mark icon"/>
                         </Fab>
                     </div>

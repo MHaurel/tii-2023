@@ -31,7 +31,7 @@ function HomePageAnimation() {
     } else if (fillPercentage < 50 && fillPercentage >= 25) {
         supportText = "Be careful, you are getting far of your objective !"
     } else if (fillPercentage < 25) {
-        supportText = "Your objective is really far, take the time to enjoy activities and make steps towards your goal !"
+        supportText = "Your objective is quite far, take the time to enjoy activities and make steps towards your goal !"
     }
 
     const gender = user === null ? "0" : user.gender;

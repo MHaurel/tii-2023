@@ -1,4 +1,4 @@
-import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, Legend } from "recharts";
+import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, Legend,  } from "recharts";
 
 function ActivitiesLineChart({data, width, height}) {
     return (

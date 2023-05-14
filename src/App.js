@@ -36,7 +36,41 @@ const darkTheme = createTheme({
 
 const lightTheme = createTheme({
   palette: {
-    mode: "light"
+    mode: "light",
+    primary : {
+      light: '#F0FBFF',
+      main: '#DEF0F8',
+      // dark: '#ADE9FF',
+      dark: "#000000"
+    },
+    secondary: {
+      light: '#B6C3D7',
+      main: '#7196CE', 
+      dark: '#2B3A4F',
+    },
+    success: {
+      light: '#6DB286',
+      main: '#499F68', 
+      dark: '#428F5E',
+    },
+    warning: {
+      light: '#FFBF4D',
+      main: '#FFAF21', 
+      dark: '#E69E1E',
+    },
+    error: {
+      light: '#E4746C',
+      main: '#DD5147', 
+      dark: '#C74940',
+    },
+    
+
+  }
+})
+
+const accessibilityTheme = createTheme({
+  palette:{
+    contrastThreshold: 4.5,
   }
 })
 

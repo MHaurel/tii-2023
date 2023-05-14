@@ -153,6 +153,8 @@ function Home() {
 
 
             <div className="homeLineChart">
+                <Typography variant="h6" component="h2">Calories lost since you started</Typography>
+                <br/>
                 {
                     user === null ? <CircularProgress/> : <ActivitiesLineChart data={activitiesData} width={800} height={500}/>
                 }
