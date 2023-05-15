@@ -8,13 +8,13 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
 import "./Signup.css";
 import { AuthContext } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 function Signup() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -107,7 +107,7 @@ function Signup() {
                     </div>
 
                     <div className='signup-box' style={{marginBottom: '24px'}}>
-                        <Link href='/login' underline='always' color='inherit' sx={[{ '&:hover': { textDecoration: 'none' } }]}> Already have an account ? Log in </Link>
+                        <Link style={{color: 'black'}} to='/login' underline='always' color='inherit' sx={[{ '&:hover': { textDecoration: 'none' }}]}> Already have an account ? Log in </Link>
                     </div>
 
                     <Divider>or</Divider>

@@ -10,13 +10,13 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 
 import "./Login.css";
 import { AuthContext } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -101,7 +101,7 @@ function Login() {
                     </div>
 
                     <div className='login-box' style={{marginBottom: '24px'}}>
-                        <Link href="#" underline="always" color="inherit" sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Forgot password? </Link>
+                        <Link style={{color: 'black'}} href="#" underline="always" color="inherit" sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Forgot password? </Link>
                     </div>
 
                     <div className='login-box'>
@@ -109,7 +109,7 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <Link href="/signup" underline="always" color="inherit" sx={[{ '&:hover': { textDecoration: 'none' } }]}> Don't have an account? Sign up </Link>
+                        <Link style={{color: 'black'}} to="/signup" underline="always" color="inherit" sx={[{ '&:hover': { textDecoration: 'none' } }]}> Don't have an account? Sign up </Link>
                     </div>
 
                     <Divider>or</Divider>
