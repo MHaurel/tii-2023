@@ -35,6 +35,7 @@ function HomePageAnimation() {
     }
 
     const gender = user === null ? "0" : user.gender;
+    console.log("gender: ",gender)
 
     return(
         <div className="divAnimation">

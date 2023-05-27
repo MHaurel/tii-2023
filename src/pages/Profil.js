@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useContext } from "react";
-import { Avatar, Card, CardContent, IconButton, Button } from "@mui/material";
+import { Avatar, Card, CardContent, IconButton, Button, Typography, Paper } from "@mui/material";
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { Navigate } from "react-router-dom";
 
@@ -32,17 +32,16 @@ function Profil() {
 
   return (
     <div className="profil-container">
-        <Card className="infos-container">
-            <CardContent>
-                <h1>Profil</h1>
+        <Paper className="infos-container">
+            <div>
+                <h1>Profile</h1>
                 <div className="infos">
-                  <p> <strong> Nom : </strong> {user.firstname} </p>
-                  <p> <strong> Prénom : </strong> {user.lastname} </p>
-                  <p> <strong> Âge : </strong> 30 ans (⚠️ pas d'infos sur l'âge dans l'API) </p>
+                  <p> <strong> Firstname : </strong> {user.firstname} </p>
+                  <p> <strong> Lastname : </strong> {user.lastname} </p>
                 </div>
-                <Button variant="text" color="secondary"> Modifier </Button>
-            </CardContent>
-        </Card>
+                <Button variant="text" color="secondary"> Edit </Button>
+            </div>
+        </Paper>
         <div className="avatar-container">
             <Avatar
             className="avatar"
