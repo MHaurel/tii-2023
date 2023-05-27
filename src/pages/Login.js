@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
@@ -52,6 +53,19 @@ function Login() {
             localStorage.setItem("password", "");
         }
 
+        if (email === '') {
+            toast("Please enter your email", {
+                className: 'toast-error'
+            });
+            return;
+        }
+        if (password === '') {
+            toast("Please enter your password", {
+                className: 'toast-error'
+            });
+            return;
+        }
+
         login(email, password)
 
         // TO DELETE --> FOR DEV ONLY
@@ -68,7 +82,7 @@ function Login() {
                 <h2 className="login-title"> Log In </h2>
 
                 <Box component="form" sx={{ "& > :not(style)": { m: 1 } }} noValidate autoComplete="off">
-                    
+
                     <div className='login-box'>
                         <TextField value={email} onInput={e => setEmail(e.target.value)} id="email-phone" label="Email or Phone Number" variant="standard" color='secondary' />
                     </div>
@@ -100,8 +114,8 @@ function Login() {
                         <FormControlLabel control={<Checkbox onChange={(e) => setSaveInfo(e.target.checked)} color='secondary' />} label="Remember me" />
                     </div>
 
-                    <div className='login-box' style={{marginBottom: '24px'}}>
-                        <Link style={{color: 'black'}} href="#" underline="always" color="inherit" sx={[{textAlign: 'left'}, { '&:hover': { textDecoration: 'none' } }]}> Forgot password? </Link>
+                    <div className='login-box' style={{ marginBottom: '24px' }}>
+                        <Link style={{ color: 'black' }} href="#" underline="always" color="inherit" sx={[{ textAlign: 'left' }, { '&:hover': { textDecoration: 'none' } }]}> Forgot password? </Link>
                     </div>
 
                     <div className='login-box'>
@@ -109,16 +123,16 @@ function Login() {
                     </div>
 
                     <div className='login-box'>
-                        <Link style={{color: 'black'}} to="/signup" underline="always" color="inherit" sx={[{ '&:hover': { textDecoration: 'none' } }]}> Don't have an account? Sign up </Link>
+                        <Link style={{ color: 'black' }} to="/signup" underline="always" color="inherit" sx={[{ '&:hover': { textDecoration: 'none' } }]}> Don't have an account? Sign up </Link>
                     </div>
 
                     <Divider>or</Divider>
 
                     <div className='login-box'>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px'}} color='secondary' >
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/googleLogo.png'} alt="google icon" />} sx={{ marginRight: '8px' }} color='secondary' >
                             Log in with Google
                         </Button>
-                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px'}} color='secondary' >
+                        <Button variant="outlined" startIcon={<Avatar src={process.env.PUBLIC_URL + '/images/icons/facebookLogo.png'} alt="facebook icon" />} sx={{ marginLeft: '8px' }} color='secondary' >
                             Log in with Facebook
                         </Button>
                     </div>

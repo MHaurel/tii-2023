@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
@@ -32,6 +33,30 @@ function Signup() {
     };
 
     const handleSignUp = () => {
+        if (firstName === '') {
+            toast("Please enter your first name", {
+                className: 'toast-error'
+            });
+            return;
+        }
+        if (lastName === '') {
+            toast("Please enter your last name", {
+                className: 'toast-error'
+            });
+            return;
+        }
+        if (email === '') {
+            toast("Please enter your email", {
+                className: 'toast-error'
+            });
+            return;
+        }
+        if (password === '') {
+            toast("Please enter your password", {
+                className: 'toast-error'
+            });
+            return;
+        }
         signup(firstName, lastName, email, password);
     }
 
