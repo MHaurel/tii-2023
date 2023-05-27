@@ -1,8 +1,16 @@
+.profil-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; /* 100% de la hauteur de la vue */
+}
+
 .profil-container {
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% de la hauteur de la vue */
+    /* height: 100vh;  */
 }
 
 .infos-container {
