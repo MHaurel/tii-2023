@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Activities from './pages/Activities';
 import Profil from "./pages/Profil";
 import Login from "./pages/Login";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HelpIcon from './components/HelpIcon';
 import { Paper, ThemeProvider, createTheme } from '@mui/material';
@@ -89,12 +89,6 @@ const lightTheme = createTheme({
     },
     
 
-  }
-})
-
-const accessibilityTheme = createTheme({
-  palette:{
-    contrastThreshold: 4.5,
   }
 })
 

@@ -38,7 +38,7 @@ function Login() {
         setEmail(email_);
         setPassword(password_);
 
-        // TO DELETE --> FOR DEV ONLY
+        // // TO DELETE --> FOR DEV ONLY
         // handleLogin()
     }, [])
 
@@ -55,7 +55,7 @@ function Login() {
         login(email, password)
 
         // TO DELETE --> FOR DEV ONLY
-        // login(email, password);
+        // login("max@gmail.com", "pass");
     }
 
     return (

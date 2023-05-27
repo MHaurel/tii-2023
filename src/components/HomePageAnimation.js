@@ -38,10 +38,15 @@ function HomePageAnimation() {
 
     return(
         <div className="divAnimation">
-            <img src={process.env.PUBLIC_URL + "/images/weightIllustration" + gender + ".png"} className='illustration'/>
-            <div className='healthBar'>
-                <HealthBar fillPercentage={fillPercentage}/>
-                <p>{supportText}</p>
+            <h3>The closer you get from your objective, the healthier your little friend will be !</h3>
+            <p>By taking care of you, you take care of your pet, isn'it beautiful ? 😊</p>
+
+            <div className='illustration'>
+                <img src={process.env.PUBLIC_URL + "/images/weightIllustration" + gender + ".png"} className='illustration'/>
+                <div className='healthBar'>
+                    <HealthBar fillPercentage={fillPercentage}/>
+                    <p>{supportText}</p>
+                </div>
             </div>
         </div>
     )

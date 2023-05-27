@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import CustomDate from "./CustomDate"
 
 class Activity {
@@ -9,6 +10,7 @@ class Activity {
         this.numberOfSteps = numberOfSteps
         this.consumedCalories = consumedCalories
         this.date = new CustomDate(date);
+        this.uuid = uuid();
     }
 
     getTypeOfActivity() {
